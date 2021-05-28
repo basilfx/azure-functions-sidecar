@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RuleSet Name="Firan.Shared.CodeAnalysis.CSharp" ToolsVersion="15.0">
+  <IncludeAll Action="Warning" />
+
+  <Rules AnalyzerId="StyleCop.Analyzers" RuleNamespace="StyleCop.Analyzers">
+    <!-- PrefixLocalCallsWithThis -->
+    <!-- Do not use 'this' keyword for local variables and methods. -->
+    <Rule Id="SA1101" Action="None" />
+    <Rule Id="SX1101" Action="Warning" />
+
+    <!-- StatementMustNotUseUnnecessaryParenthesis -->
+    <!-- Using parenthesis can make code readable. -->
+    <Rule Id="SA1119" Action="None" />
+
+    <!-- UsingDirectivesMustBeOrderedAlphabeticallyByNamespace -->
+    <!-- This makes it easier to find and adapt using directives. -->
+    <Rule Id="SA1210" Action="None" />
+
+    <!-- GenericTypeConstraintsMustBeOnOwnLine -->
+    <!-- In many cases, only a single type constraint is added, which fits the same line. -->
+    <Rule Id="SA1127" Action="None" />
+
+    <!-- FieldNamesMustNotBeginWithUnderscore -->
+    <!-- Per Microsoft guidelines, private fields are prefixed with an underscore. -->
+    <Rule Id="SA1309" Action="None" />
+    <Rule Id="SX1309" Action="Warning" />
+
+    <!-- UseTrailingCommasInMultiLineInitializers -->
+    <!-- Not required. -->
+    <Rule Id="SA1413" Action="None" />
+
+    <!-- PropertySummaryDocumentationMustMatchAccessors -->
+    <!-- This ensures that getters and setters are perfectly documented when using IntelliSense. -->
+    <Rule Id="SA1623" Action="None" />
+
+    <!-- FileMustHaveHeader -->
+    <!-- No headers are being used. -->
+    <Rule Id="SA1633" Action="None" />
+
+    <!-- ConstructorSummaryDocumentationMustBeginWithStandardText -->
+    <!-- Not required. -->
+    <Rule Id="SA1642" Action="None" />
+  </Rules>
+
+  <Rules AnalyzerId="Menees.Analyzers" RuleNamespace="Menees.Analyzers">
+    <!-- Line is too long -->
+    <!-- Long lines increase the need for horizontal scrolling, which limits side-by-side views (e.g. diffs). -->
+    <Rule Id="MEN002" Action="Warning" />
+
+    <!-- Use UTC time -->
+    <!-- UTC times are unambiguous and always increasing. -->
+    <Rule Id="MEN013" Action="Warning" />
+
+    <!-- The rules below are disabled because MEN002 and MEN013 are the only one needed from this analyzer. -->
+    <Rule Id="MEN001" Action="None" />
+    <Rule Id="MEN003" Action="None" />
+    <Rule Id="MEN004" Action="None" />
+    <Rule Id="MEN005" Action="None" />
+    <Rule Id="MEN006" Action="None" />
+    <Rule Id="MEN007" Action="None" />
+    <Rule Id="MEN008" Action="None" />
+    <Rule Id="MEN009" Action="None" />
+    <Rule Id="MEN010" Action="None" />
+    <Rule Id="MEN011" Action="None" />
+    <Rule Id="MEN012" Action="None" />
+  </Rules>
+
+  <Rules AnalyzerId="Microsoft.Analyzers.ManagedCodeAnalysis" RuleNamespace="Microsoft.Rules.Managed">
+    <!-- Do not directly await a Task without calling ConfigureAwait -->
+    <!-- This rule depends on the type of project developed (libraries should use it, applications not). -->
+    <Rule Id="CA2007" Action="None" />
+
+    <!-- Identifiers should not match keywords -->
+    <!-- This rule forbids names(paces) like 'Shared', which we use everywhere in the Firan landscape. -->
+    <Rule Id="CA1716" Action="None" />
+  </Rules>
+
+  <Rules AnalyzerId="Microsoft.CodeQuality.Analyzers" RuleNamespace="Microsoft.CodeQuality.Analyzers">
+    <!-- Validate arguments of public methods -->
+    <!-- Many code (including functions) have a public API. This rule complicates things a lot. -->
+    <Rule Id="CA1062" Action="None" />
+  </Rules>
+
+  <Rules AnalyzerId="Microsoft.NetCore.Analyzers" RuleNamespace="Microsoft.NetCore.Analyzers">
+    <!-- Do not pass literals as localized parameters -->
+    <!-- Most of our code is backend-related and using localized exceptions will complicate things a lot. -->
+    <Rule Id="CA1303" Action="None" />
+  </Rules>
+</RuleSet>

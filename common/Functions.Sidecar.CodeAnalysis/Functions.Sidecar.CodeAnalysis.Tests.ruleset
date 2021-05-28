@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RuleSet Name="Firan.Shared.CodeAnalysis.CSharp.Tests" ToolsVersion="15.0">
+  <Include Path="Firan.Shared.CodeAnalysis.CSharp.ruleset" Action="Warning" />
+
+  <Rules AnalyzerId="Microsoft.Analyzers.ManagedCodeAnalysis" RuleNamespace="Microsoft.Rules.Managed">
+    <!-- Identifiers should not contain underscores -->
+    <!-- Tests may use underscores in method names to group tests -->
+    <Rule Id="CA1707" Action="None" />
+
+    <!-- Mark members as static -->
+    <!-- Test methods should not be static methods -->
+    <Rule Id="CA1822" Action="None" />
+  </Rules>
+</RuleSet>

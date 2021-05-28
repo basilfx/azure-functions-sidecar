@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
+    <ProjectGuid>{34F22B0C-AB47-40A8-BD1A-B11C3EE06D3E}</ProjectGuid>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Refit" Version="6.0.38" />
+  </ItemGroup>
+
+  <!-- See the README.md for more information about these dependencies -->
+  <ItemGroup>
+    <Compile Include="../../lib/azure-functions-host/src/WebJobs.Script.WebHost/Models/ExtensionBundle.cs" Link="ExtensionBundle.cs" />
+    <Compile Include="../../lib/azure-functions-host/src/WebJobs.Script.WebHost/Models/FunctionStatus.cs" Link="FunctionStatus.cs" />
+    <Compile Include="../../lib/azure-functions-host/src/WebJobs.Script.WebHost/Models/FunctionMetadataResponse.cs" Link="FunctionMetadataResponse.cs" />
+    <Compile Include="../../lib/azure-functions-host/src/WebJobs.Script.WebHost/Models/HostStatus.cs" Link="HostStatus.cs" />
+  </ItemGroup>
+
+  <Import Project="../../common/Functions.Sidecar.CodeAnalysis/Functions.Sidecar.CodeAnalysis.props" />
+
+</Project>
